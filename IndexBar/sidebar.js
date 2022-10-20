@@ -18,11 +18,3 @@ for (let i = 0; i < letterArr.length; i++) {
   li.innerHTML = letterArr[i];
   ul.appendChild(li);
 }
-//事件委托
-ul.addEventListener("click", function (event) {
-  let liNodes = document.querySelectorAll("li");
-  for(let i=0; i<liNodes.length;i++){  
-    liNodes[i].classList.remove('active')
-  }
-    event.target.className='active'
-});

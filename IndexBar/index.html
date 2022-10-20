@@ -14,11 +14,31 @@
       <div class="sidebar">
         <ul></ul>
       </div>
-      <div class="city">
-
-      </div>
+      <div class="city"></div>
     </div>
   </body>
   <script type="text/javascript" src="sidebar.js"></script>
   <script type="text/javascript" src="city.js"></script>
+  <script>
+    let ulNode = document.querySelector("ul");
+    //事件委托
+    ulNode.addEventListener("click", function (event) {
+      let liNodes = document.querySelectorAll("li");
+      for (let i = 0; i < liNodes.length; i++) {
+        liNodes[i].classList.remove("active");
+      }
+      event.target.className = "active";
+      let options={
+        top:0,
+        behavior:"smooth"
+      }
+      collectLetterArr.forEach(element => {
+        if(element.key===event.target.innerHTML){
+            options.top=element.top
+        }
+      });
+     
+      window.scrollTo(options)
+    });
+  </script>
 </html>
