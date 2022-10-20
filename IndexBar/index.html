@@ -28,17 +28,41 @@
         liNodes[i].classList.remove("active");
       }
       event.target.className = "active";
-      let options={
-        top:0,
-        behavior:"smooth"
-      }
-      collectLetterArr.forEach(element => {
-        if(element.key===event.target.innerHTML){
-            options.top=element.top
+      let options = {
+        top: 0,
+        behavior: "smooth",
+      };
+      collectLetterArr.forEach((element) => {
+        if (element.key === event.target.innerHTML) {
+          options.top = element.top;
         }
       });
-     
-      window.scrollTo(options)
+
+      window.scrollTo(options);
+    });
+
+    // 监听页面滚动动态修改字体颜色
+    window.addEventListener("scroll", function (e) {
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      let liNodes = document.querySelectorAll("li");
+      for (let i = 0; i < liNodes.length; i++) {
+        liNodes[i].classList.remove("active");
+      }
+      let goal = "";
+      collectLetterArr.forEach((item) => {
+        console.log("item", item.top, scrollTop);
+        if (item.top <= scrollTop) {
+          goal = item.key;
+        }
+      });
+      for (let i = 0; i < liNodes.length; i++) {
+        if (liNodes[i].innerHTML == goal) {
+          liNodes[i].classList.add("active");
+        }
+      }
     });
   </script>
 </html>
