@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.sidebar{
+    background-color: #eee;
+    position: fixed;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    border-radius: 50px;
+    font-size: 13px;
+  
+
+}
+/* 去掉ul的点 */
+ul{
+    list-style-type:none;
+    text-align: center;
+}
+/* 激活样式 */
+.active{
+    color: #CB3B38;
+    font-weight: 900;
+}
