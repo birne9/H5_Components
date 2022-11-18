@@ -572,6 +572,7 @@ for(let i=0;i<cityArrs.length;i++){
     let divOneNode = document.createElement("div");
     divOneNode.innerHTML=cityArrs[i].key
     divOneNode.style.backgroundColor='#eee'
+    divOneNode.setAttribute('class','titleName')
     cityNode.appendChild(divOneNode);
     // 3、收集数据(abc的距离顶部的距离和内容)
     collectLetterArr.push({
@@ -580,6 +581,7 @@ for(let i=0;i<cityArrs.length;i++){
     })
     for(let j=0;j<cityArrs[i].city.length;j++){
         let divTwoNode = document.createElement("div");
+        divTwoNode.setAttribute('class','cityname')
         divTwoNode.innerHTML=cityArrs[i].city[j].name
         cityNode.appendChild(divTwoNode)
        

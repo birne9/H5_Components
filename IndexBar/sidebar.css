@@ -14,8 +14,7 @@
     border-radius: 50px;
     font-size: 13px;
     right: 20px;
-    
-  
+    z-index: 999;
 
 }
 /* 去掉ul的点 */
